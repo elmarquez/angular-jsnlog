@@ -1,0 +1,22 @@
+{
+  "name": "angular-jsnlog",
+  "css": [
+    "vendor/bootstrap/dist/css/bootstrap.min.css",
+    "styles/example.css"
+  ],
+  "font": [
+    "http://fonts.googleapis.com/css?family=PT+Sans:400,700",
+    "http://fonts.googleapis.com/css?family=Montserrat:400,700"
+  ],
+  "js": [
+    "vendor/jquery/dist/jquery.min.js",
+    "vendor/bootstrap/dist/js/bootstrap.min.js",
+    "vendor/jsnlog/jsnlog.min.js",
+    "vendor/angular/angular.min.js"
+  ],
+  "app": [
+    "scripts/services/angular-jsnlog.js",
+    "scripts/app.js",
+    "scripts/controllers/example.js"
+  ]
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1,width=device-width">
+    <title>angular-jsnlog</title>
+    <!-- STYLES -->
+    
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=PT+Sans:400,700"/>
+    
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Montserrat:400,700"/>
+    
+    
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/dist/css/bootstrap.min.css"/>
+    
+    <link rel="stylesheet" type="text/css" href="styles/example.css"/>
+    
+    <!-- SCRIPTS -->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="vendor/jquery/dist/jquery.min.js"></script>
+    
+    <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    
+    <script src="vendor/jsnlog/jsnlog.min.js"></script>
+    
+    <script src="vendor/angular/angular.min.js"></script>
+    
+    
+    <script src="scripts/services/angular-jsnlog.js"></script>
+    
+    <script src="scripts/app.js"></script>
+    
+    <script src="scripts/controllers/example.js"></script>
+    
+</head>
+<body ng-app="example">
+
+<div id="content-wrapper" class="container-fluid" ng-controller="ExampleCtrl" ng-init="init()">
+    <div class="row">
+        <div id="left" class="col-lg-4 col-md-4 col-sm-6">
+            <h1>Angular JSNLog</h1>
+            <p class="lead">
+                JSNLog is a fantastic client side logging library. It enables you to capture
+                all log output from your and forward those log messages to a server for storage
+                and processing. angular-jsnlog is a drop-in replacement for
+                Angularjs's $log service.
+            </p>
+            <p>
+                Use Bower to automatically install the library and its
+                dependencies in your project.
+            </p>
+
+            <div class="code">bower install -S angular-jsnlog</div>
+            <p>
+                Refer to the README.md document for instructions on how to create
+                and customize logging. Examples are available from the repository.
+            </p>
+            <button class="btn btn-success" ng-click="debug()">DEBUG</button>
+            <button class="btn btn-info" ng-click="info()">INFO</button>
+            <button class="btn btn-danger" ng-click="error()">ERROR</button>
+            <button class="btn btn-default" ng-click="except()">EXCEPTION</button>
+            <button class="btn btn-warning" ng-click="ajax()">AJAX</button>
+        </div>
+        <div id="right" class="col-lg-4 col-md-4 col-sm-6">
+            <ul class="list">
+                <li ng-repeat="line in log track by $index">{{ line }}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- github fork me corner banner -->
+<a href="https://github.com/elmarquez/angular-jsnlog">
+    <img style="position: absolute; top: 0; right: 0; border: 0;"
+         src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67"
+         alt="Fork me on GitHub"
+         data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
+
+</body>
+</html>

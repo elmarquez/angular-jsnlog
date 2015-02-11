@@ -1,0 +1,32 @@
+{
+  "name": "angular-jsnlog",
+  "version": "0.1.0",
+  "authors": [
+    "Davis Marques <dmarq.ezz@gmail.com>"
+  ],
+  "description": "Client logging library and drop-in replace for Angular's $log service",
+  "main": "dist/angular-jsnlog.js",
+  "license": "MIT",
+  "ignore": [
+    "Gruntfile.js",
+    ".bowerrc",
+    ".jshintrc",
+    ".travis.yml",
+    "package.json",
+    "conf",
+    "dist/examples",
+    "node_modules",
+    "src",
+    "test",
+    "vendor"
+  ],
+  "appPath": "src",
+  "dependencies": {
+    "angular": "~1.3.11",
+    "jsnlog": "~2.7.11"
+  },
+  "devDependencies": {
+    "bootstrap": "~3.3.2",
+    "jquery": "~2.1.3"
+  }
+}
