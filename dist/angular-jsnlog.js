@@ -26,7 +26,7 @@ angular.module('jsnlog', [])
     .factory('$exceptionHandler', function () {
         return function (exception, cause) {
             JL('Angular').fatalException(cause, exception);
-            throw exception;
+            throw new Error(exception.message || cause || 'Exception');
         };
     })
     .factory('logToServerInterceptor', ['$q', function ($q) {

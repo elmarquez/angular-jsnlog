@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Directive: test', function () {
+describe('angular-jsnlog', function () {
 
   // load the directive's module
   beforeEach(module('example'));

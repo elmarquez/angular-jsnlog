@@ -27,33 +27,43 @@
 </head>
 <body ng-app="example">
 
-<div id="content-wrapper" class="container-fluid" ng-controller="ExampleCtrl" ng-init="init()">
-    <div class="row">
-        <div id="left" class="col-lg-4 col-md-4 col-sm-6">
+<div id="content-wrapper" class="container-fluid fill" ng-controller="ExampleCtrl" ng-init="init()">
+    <div class="row fill">
+        <div id="left" class="col-lg-4 col-md-4 col-sm-6 fill">
             <h1>Angular JSNLog</h1>
             <p class="lead">
-                JSNLog is a fantastic client side logging library. It enables you to capture
-                all log output from your and forward those log messages to a server for storage
-                and processing. angular-jsnlog is a drop-in replacement for
-                Angularjs's $log service.
+                Capture client side log messages and forward them to your server
+                for storage and processing.
+                <a href="https://github.com/elmarquez/angular-jsnlog">angular-jsnlog</a> is a drop-in
+                replacement for Angular's $log service, provided by the
+                amazing <a href="http://jsnlog.com/">JSNLog</a> library.
             </p>
             <p>
-                Use Bower to automatically install the library and its
+                Use Bower to automatically install angular-jsnlog and its
                 dependencies in your project.
             </p>
-
             <div class="code">bower install -S angular-jsnlog</div>
             <p>
-                Refer to the README.md document for instructions on how to create
-                and customize logging. Examples are available from the repository.
+                Refer to the README.md document for instructions on how to
+                install and configure logging.
             </p>
-            <button class="btn btn-success" ng-click="debug()">DEBUG</button>
-            <button class="btn btn-info" ng-click="info()">INFO</button>
-            <button class="btn btn-danger" ng-click="error()">ERROR</button>
-            <button class="btn btn-default" ng-click="except()">EXCEPTION</button>
-            <button class="btn btn-warning" ng-click="ajax()">AJAX</button>
+
+            <h3>Try It Out</h3>
+            <p>
+                Click a button to create a new logging event. JSNLog will batch
+                and then send the log message to the remote server. The log view
+                polls the remote server every few seconds and shows you the
+                updated log.
+            </p>
+            <div class="centered-block">
+                <ul class="inline">
+                    <li><button class="btn btn-success" ng-click="debug()">DEBUG</button></li>
+                    <li><button class="btn btn-info" ng-click="info()">INFO</button></li>
+                    <li><button class="btn btn-danger" ng-click="error()">ERROR</button></li>
+                </ul>
+            </div>
         </div>
-        <div id="right" class="col-lg-4 col-md-4 col-sm-6">
+        <div id="right" class="col-lg-8 col-md-8 col-sm-6 fill">
             <ul class="list">
                 <li ng-repeat="line in log track by $index">{{ line }}</li>
             </ul>
