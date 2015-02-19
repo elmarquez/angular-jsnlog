@@ -7,20 +7,20 @@
  */
 angular.module('jsnlog', [])
     .service('$log', function () {
-        this.log = function (msg) {
-            JL('Angular').trace(msg);
-        };
         this.debug = function (msg) {
             JL('Angular').debug(msg);
+        };
+        this.error = function (msg) {
+            JL('Angular').error(msg);
         };
         this.info = function (msg) {
             JL('Angular').info(msg);
         };
+        this.log = function (msg) {
+            JL('Angular').trace(msg);
+        };
         this.warn = function (msg) {
             JL('Angular').warn(msg);
-        };
-        this.error = function (msg) {
-            JL('Angular').error(msg);
         };
     })
     .factory('$exceptionHandler', function () {
@@ -56,6 +56,11 @@ angular.module('jsnlog', [])
             }
         };
         return myInterceptor;
+    }])
+    .run([function () {
+        if (!window.JL || !JL) {
+            throw new Error('JSNLog library is not loaded');
+        }
     }]);
 
 ///**

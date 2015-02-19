@@ -1,3 +1,4 @@
+/* globals JL, angular */
 'use strict';
 
 /**
@@ -7,8 +8,7 @@
  * on the right hand side of the screen.
  */
 angular
-    .module('example', ['jsnlog'])
-    // FIXME Configure logging options in JSNLog.
+    .module('example', ['jsnlog', 'uuid4'])
     .config(['$httpProvider', function($httpProvider) {
         // Catch all logging output from $http and send it to JSNLog.
         $httpProvider.interceptors.push('logToServerInterceptor');
@@ -20,7 +20,13 @@ angular
     //        return shadowLogger($delegate);
     //    });
     //}])
-    .run(['$log', function ($log) {
-        // Start the example application.
+    .run(['$log', 'uuid4', function ($log, uuid4) {
+        // configure JSNLog
+        JL.setOptions({
+            // the end point that will receive the log messages
+            defaultAjaxUrl: '/log',
+            // a unique identifier for the client session
+            requestId: uuid4.generate()
+        });
         $log.info('angular-jsnlog example application started.');
     }]);

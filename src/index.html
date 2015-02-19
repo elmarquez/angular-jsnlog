@@ -59,9 +59,18 @@
                 <ul class="inline">
                     <li><button class="btn btn-success" ng-click="debug()">DEBUG</button></li>
                     <li><button class="btn btn-info" ng-click="info()">INFO</button></li>
+                    <li><button class="btn btn-warning" ng-click="warn()">WARN</button></li>
                     <li><button class="btn btn-danger" ng-click="error()">ERROR</button></li>
+                    <li><button class="btn btn-danger" ng-click="ajax()">AJAX ERROR</button></li>
                 </ul>
             </div>
+            <p>
+                The JSNLog documentation describes the format of logging messages quite
+                nicely. In summary, <code>r</code> is a request/client identifier that you
+                can generate, <code>l</code> is the log level, <code>m</code> is the log
+                message, <code>n</code> is the namespace, and <code>t</code> is the
+                timestamp.
+            </p>
         </div>
         <div id="right" class="col-lg-8 col-md-8 col-sm-6 fill">
             <ul class="list">
