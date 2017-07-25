@@ -1,6 +1,6 @@
 {
   "name": "angular-jsnlog",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Client logging library and drop-in replace for Angular's $log service",
   "main": "dist/angular-jsnlog.js",
   "scripts": {
