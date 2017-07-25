@@ -8,7 +8,7 @@ module.exports = {
   main: {
     options: {
       filter: 'include',
-      tasks: ['availabletasks','compile','serve','test']
+      tasks: ['availabletasks','compile','release','serve','test']
     }
   }
 };

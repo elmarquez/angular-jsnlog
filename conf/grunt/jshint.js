@@ -1,18 +1,12 @@
 module.exports = {
   options: {
-    jshintrc: 'conf/.jshintrc',
+    jshintrc: 'conf/jshint.json',
     reporter: require('jshint-stylish')
   },
   src: {
-    src: [
-      'Gruntfile.js',
-      'src/**/*.js'
-    ]
+    src: ['Gruntfile.js', 'src/**/*.js']
   },
   test: {
-    options: {
-      jshintrc: '.jshintrc'
-    },
     src: ['test/spec/{,*/}*.js']
   }
 };
